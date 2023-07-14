@@ -36,15 +36,15 @@ app.post('/submit', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: myemail,
+            user: process.env.myemail,
             pass: process.env.pass
         }
     });
     
     // Define the email options
     const mailOptions1 = {
-        from: myemail,
-        to: myemail,
+        from: process.env.myemail,
+        to: process.env.myemail,
         subject: 'Order Recived From ReactMeal',
         text: 
         `Customer name: ${name},
