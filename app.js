@@ -8,7 +8,12 @@ const app = express();
 
 // Serve the React app as a static file
 app.use(express.static(path.join(__dirname, '../client/build')));
-
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+  });
 
 // Parse request body as JSON
 app.use(express.json());
