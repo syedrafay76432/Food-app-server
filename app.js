@@ -59,7 +59,7 @@ app.post('/submit', (req, res) => {
     const mailOptions2 = {
         from: 'syedrafay76432@gmail.com',
         to: email,
-        subject: 'Thank You for Your Purchase!',
+        subject: `Thank You for Your Purchase ${name}!`,
         text: `Dear ${name},
 
      Thank you for choosing to shop with us! We appreciate your recent purchase from our website and wanted to express our sincere gratitude.
