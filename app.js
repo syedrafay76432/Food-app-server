@@ -36,15 +36,15 @@ app.post('/submit', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'syedrafay76432@gmail.com',
+            user: myemail,
             pass: process.env.pass
         }
     });
     
     // Define the email options
     const mailOptions1 = {
-        from: 'syedrafay76432@gmail.com',
-        to: 'syedrafay76432@gmail.com',
+        from: myemail,
+        to: myemail,
         subject: 'Order Recived From ReactMeal',
         text: 
         `Customer name: ${name},
@@ -95,7 +95,7 @@ app.post('/submit', (req, res) => {
 });
 
 // Start the server
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
